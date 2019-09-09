@@ -1,0 +1,8 @@
+com\aplicacionUsuario\fuentes\Controlador\InicioSesionController.class
+com\aplicacionUsuario\fuentes\Entidades\Claveusuario.class
+com\aplicacionUsuario\fuentes\Controlador\UsuarioController.class
+com\aplicacionUsuario\fuentes\Dao\UsuarioDao.class
+com\aplicacionUsuario\fuentes\Entidades\UsuarioApplication_.class
+com\aplicacionUsuario\fuentes\Entidades\Claveusuario_.class
+com\aplicacionUsuario\fuentes\Dao\AbstractFacade.class
+com\aplicacionUsuario\fuentes\Entidades\UsuarioApplication.class

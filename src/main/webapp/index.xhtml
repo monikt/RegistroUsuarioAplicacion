@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      >
+
+    <h:head>
+        <title>index</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <link rel="stylesheet" href="resources/css/estilos.css"/>
+
+        <style>
+            h1{
+                text-align: center;
+            }
+        </style>
+    </h:head>
+    <body>
+
+        <h:form>    
+
+            
+
+
+            <p:dialog header="Login" widgetVar="dlg2" modal="true" height="250" width="460">
+
+
+              
+
+                <h:panelGrid columns="2" cellpadding="5" width="380" id="datosL" >
+                    <h:outputLabel for="username" value="Correo:" />
+                    <p:inputText id="username" value="#{login.correo}" 
+                                 required="true" label="correo" maxlength="45" size="30"/>
+
+
+                    <h:outputLabel for="password" value="Clave:" />
+                    <p:password  id="password"  required="true"
+                                 label="password" value="#{login.clave}" />
+
+
+                    <p:commandButton  id="loginButton" value="Login"
+                                      update="growl" action="#{login.inicioSesion()}"
+                                    />
+
+                </h:panelGrid>
+
+
+
+
+            </p:dialog>
+        </h:form>
+       
+
+
+    </body> 
+</html>

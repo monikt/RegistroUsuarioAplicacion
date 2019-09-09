@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./Template.xhtml">
+
+            <ui:define name="content">
+                <h1> Listado de usuarios Registrados</h1>
+                <h:form id="formulario1">
+
+                    <p:dataTable 
+                        var="usuario" 
+                        value="#{usuarioControlador.listarUsuarios()}"
+                        rows="7"
+                        paginator="true"
+                        rowKey="#{usuario.secuenciaUsuario}"
+                        emptyMessage="Not data Show"
+                        paginatorPosition="top"
+                        sortOrder="ascending"
+                        style="max-width: 1400px;"
+                        rendered="#{usuarioControlador.listarUsuarios()!=null || usuarioControlador.listarUsuarios().size() > 0 }"
+                        >
+
+                        <p:column headerText="Id" width="60">
+                            <h:outputText value="#{usuario.secuenciaUsuario}" />
+                        </p:column>
+
+                        <p:column headerText="Tipo de identificacion" width="200">
+                            <h:outputText value="#{usuario.tipoDocumento}" />
+                        </p:column>
+
+                        <p:column headerText="Numero de identificacion" width="200">
+                            <h:outputText value="#{usuario.numeroDocumento}" />
+                        </p:column>
+
+                        <p:column headerText="Nombre" width="200">
+                            <h:outputText value="#{usuario.nombre}" />
+                        </p:column>
+                        
+                         <p:column headerText="Correo" width="200">
+                             <h:outputText value="#{usuario.correo}" />
+                        </p:column>
+                    </p:dataTable>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+
+    </body>
+</html>

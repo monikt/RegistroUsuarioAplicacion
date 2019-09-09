@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+       xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./Template.xhtml">
+
+            <ui:define name="content">
+                  <h:form>
+                    <p:growl id="mensaje" autoUpdate="true" severity="info, fatal" showSummary="true" showDetail="true"/>
+                    <h1> Creacion de Usuario </h1>
+                    <p:fieldset legend="Informacion">
+
+                        <h:panelGrid columns="3" id="datosP">
+
+
+                            <h:outputLabel value="Documento:" for="documento" />
+                            <h:inputText id="documento"  value="#{usuarioControlador.usuario.numeroDocumento}" required="true"/>
+                            <p:message for="documento"></p:message>
+
+                            <h:outputLabel value="Tipo documento" for="tipod"/>
+                            <h:inputText id="tipod" value="#{usuarioControlador.usuario.tipoDocumento}" required="true"/>
+                            <p:message for="tipod"></p:message>
+
+                            <h:outputLabel value="Nombre:" for="nombre"/>
+                            <h:inputText id="nombre" value="#{usuarioControlador.usuario.nombre}" required="true" />
+                            <p:message for="nombre"></p:message>
+
+                            <h:outputLabel value="Apellido:" for="correo" />
+                            <h:inputText id="correo" value="#{usuarioControlador.usuario.correo}" required="true"/>
+                            <p:message for="correo"></p:message>  
+                            
+                            <h:outputLabel value="Clave:" for="clave" />
+                            <h:inputSecret id="clave" value="#{usuarioControlador.usuario.idClave.clave}" required="true"/>
+                            <p:message for="clave"></p:message> 
+                        </h:panelGrid>
+                    </p:fieldset>
+                    <p:commandButton value="Registrarse" action="#{usuarioControlador.registrarUsuario()}" update="datosP"/>
+                    </h:form>          
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
